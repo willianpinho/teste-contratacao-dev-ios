@@ -11,6 +11,8 @@ class MovieListViewModel {
     let webservice: WebService
     var movies: [Movie] = []
     var dataFound: (() -> ())?
+    let movieItemSelected = DelegateView<Movie>()
+    var viewDidDisappear = DelegateView<Void>()
 
     init(webservice: WebService) {
         self.webservice = webservice

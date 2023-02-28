@@ -27,6 +27,16 @@
 		FF09F37029AE3E4E00714B9A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F36E29AE3E4E00714B9A /* MovieTableViewCell.swift */; };
 		FF09F37129AE3E4E00714B9A /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF09F36F29AE3E4E00714B9A /* MovieTableViewCell.xib */; };
 		FF09F37429AE532400714B9A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F37329AE532400714B9A /* UIImageView+Extension.swift */; };
+		FF09F37B29AE61A900714B9A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F37A29AE61A900714B9A /* AuthService.swift */; };
+		FF09F38229AE6DF200714B9A /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F38129AE6DF200714B9A /* LoginCoordinator.swift */; };
+		FF09F38729AE6E2C00714B9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F38529AE6E2C00714B9A /* LoginViewController.swift */; };
+		FF09F38829AE6E2C00714B9A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF09F38629AE6E2C00714B9A /* LoginViewController.xib */; };
+		FF09F38A29AE6E3D00714B9A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F38929AE6E3D00714B9A /* LoginViewModel.swift */; };
+		FF09F39029AE6FA600714B9A /* MovieCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F38F29AE6FA600714B9A /* MovieCoordinator.swift */; };
+		FF09F39229AE6FC800714B9A /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F39129AE6FC800714B9A /* MovieViewModel.swift */; };
+		FF09F39529AE6FD600714B9A /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F39329AE6FD600714B9A /* MovieViewController.swift */; };
+		FF09F39629AE6FD600714B9A /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF09F39429AE6FD600714B9A /* MovieViewController.xib */; };
+		FF09F39929AE70A200714B9A /* DelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F39829AE70A200714B9A /* DelegateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +80,16 @@
 		FF09F36E29AE3E4E00714B9A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		FF09F36F29AE3E4E00714B9A /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		FF09F37329AE532400714B9A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		FF09F37A29AE61A900714B9A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FF09F38129AE6DF200714B9A /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		FF09F38529AE6E2C00714B9A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FF09F38629AE6E2C00714B9A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		FF09F38929AE6E3D00714B9A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FF09F38F29AE6FA600714B9A /* MovieCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCoordinator.swift; sourceTree = "<group>"; };
+		FF09F39129AE6FC800714B9A /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		FF09F39329AE6FD600714B9A /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		FF09F39429AE6FD600714B9A /* MovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
+		FF09F39829AE70A200714B9A /* DelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +141,7 @@
 		FF09F31E29AE308C00714B9A /* MoviesIMDB */ = {
 			isa = PBXGroup;
 			children = (
+				FF09F39729AE709400714B9A /* Utils */,
 				FF09F37229AE530E00714B9A /* Extensions */,
 				FF09F36829AE373A00714B9A /* Models */,
 				FF09F36229AE33AA00714B9A /* Services */,
@@ -172,6 +193,8 @@
 		FF09F35329AE320E00714B9A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FF09F38B29AE6F7300714B9A /* Movie */,
+				FF09F37C29AE639C00714B9A /* Login */,
 				FF09F35429AE321300714B9A /* MovieList */,
 			);
 			path = Features;
@@ -217,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				FF09F36329AE33D900714B9A /* Webservice.swift */,
+				FF09F37A29AE61A900714B9A /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +269,84 @@
 				FF09F37329AE532400714B9A /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF09F37C29AE639C00714B9A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F37F29AE63B200714B9A /* Coordinator */,
+				FF09F37E29AE63AC00714B9A /* View */,
+				FF09F37D29AE63A400714B9A /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FF09F37D29AE63A400714B9A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F38929AE6E3D00714B9A /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF09F37E29AE63AC00714B9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F38529AE6E2C00714B9A /* LoginViewController.swift */,
+				FF09F38629AE6E2C00714B9A /* LoginViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF09F37F29AE63B200714B9A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F38129AE6DF200714B9A /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FF09F38B29AE6F7300714B9A /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F38E29AE6F9700714B9A /* Coordinator */,
+				FF09F38D29AE6F7E00714B9A /* ViewModel */,
+				FF09F38C29AE6F7A00714B9A /* View */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		FF09F38C29AE6F7A00714B9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F39329AE6FD600714B9A /* MovieViewController.swift */,
+				FF09F39429AE6FD600714B9A /* MovieViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF09F38D29AE6F7E00714B9A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F39129AE6FC800714B9A /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF09F38E29AE6F9700714B9A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F38F29AE6FA600714B9A /* MovieCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FF09F39729AE709400714B9A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F39829AE70A200714B9A /* DelegateView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,8 +459,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF09F38829AE6E2C00714B9A /* LoginViewController.xib in Resources */,
 				FF09F35D29AE326300714B9A /* MovieListViewController.xib in Resources */,
 				FF09F32C29AE308E00714B9A /* LaunchScreen.storyboard in Resources */,
+				FF09F39629AE6FD600714B9A /* MovieViewController.xib in Resources */,
 				FF09F37129AE3E4E00714B9A /* MovieTableViewCell.xib in Resources */,
 				FF09F32929AE308E00714B9A /* Assets.xcassets in Resources */,
 			);
@@ -387,11 +491,19 @@
 			files = (
 				FF09F35229AE318800714B9A /* AppCoordinator.swift in Sources */,
 				FF09F35C29AE326300714B9A /* MovieListViewController.swift in Sources */,
+				FF09F38229AE6DF200714B9A /* LoginCoordinator.swift in Sources */,
+				FF09F38729AE6E2C00714B9A /* LoginViewController.swift in Sources */,
+				FF09F39029AE6FA600714B9A /* MovieCoordinator.swift in Sources */,
+				FF09F39229AE6FC800714B9A /* MovieViewModel.swift in Sources */,
+				FF09F38A29AE6E3D00714B9A /* LoginViewModel.swift in Sources */,
+				FF09F39929AE70A200714B9A /* DelegateView.swift in Sources */,
 				FF09F36A29AE374D00714B9A /* Movie.swift in Sources */,
 				FF09F36429AE33D900714B9A /* Webservice.swift in Sources */,
 				FF09F32029AE308C00714B9A /* AppDelegate.swift in Sources */,
 				FF09F32229AE308C00714B9A /* SceneDelegate.swift in Sources */,
+				FF09F37B29AE61A900714B9A /* AuthService.swift in Sources */,
 				FF09F37429AE532400714B9A /* UIImageView+Extension.swift in Sources */,
+				FF09F39529AE6FD600714B9A /* MovieViewController.swift in Sources */,
 				FF09F36129AE336200714B9A /* BaseCoordinator.swift in Sources */,
 				FF09F35929AE324600714B9A /* MovieListViewModel.swift in Sources */,
 				FF09F35F29AE327A00714B9A /* MovieListCoordinator.swift in Sources */,

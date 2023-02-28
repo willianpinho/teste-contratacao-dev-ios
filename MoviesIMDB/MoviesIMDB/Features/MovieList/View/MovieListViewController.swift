@@ -20,6 +20,11 @@ class MovieListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupData()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear.accept?(())
+    }
 }
 
 extension MovieListViewController {
@@ -86,5 +91,10 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.movieItemSelected.accept?(viewModel.movies[indexPath.row])
     }
 }
