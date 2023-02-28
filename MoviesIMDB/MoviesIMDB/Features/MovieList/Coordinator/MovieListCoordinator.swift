@@ -30,8 +30,6 @@ class MovieListCoordinator: BaseCoordinator {
     }
     
     private func navigateToMovie(movie: Movie) {
-        
-        
         let movieCoordinator = MovieCoordinator(movie: movie)
         movieCoordinator.navigationController = navigationController
         start(coordinator: movieCoordinator)
