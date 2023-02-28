@@ -15,5 +15,19 @@ class MovieListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setupData()
+    }
+    
+    private func setupData() {
+        viewModel.fetchMovies()
+        viewModel.dataFound = { [weak self] in
+            self?.refreshData()
+        }
+    }
+    
+    func refreshData() {
+        DispatchQueue.main.async {
+            
+        }
     }
 }

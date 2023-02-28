@@ -9,8 +9,24 @@ import Foundation
 
 class MovieListViewModel {
     let webservice: WebService
+    var movies: [Movie] = []
+    var dataFound: (() -> ())?
 
     init(webservice: WebService) {
         self.webservice = webservice
+    }
+    
+    func fetchMovies() {
+        webservice.getTop250Movies { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let movies):
+                    self?.movies = movies
+                    self?.dataFound?()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
