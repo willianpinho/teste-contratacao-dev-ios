@@ -9,28 +9,88 @@ import XCTest
 @testable import MoviesIMDB
 
 final class MoviesIMDBTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    var webservice: MockWebService!
+    var viewModel: MovieListViewModel!
+    
+    func testGetTop250Movies() {
+        let expectation = XCTestExpectation(description: "Get top 250 movies")
+        let webService = WebService()
+        
+        webService.getTop250Movies { (result) in
+            switch result {
+            case .success(let movies):
+                XCTAssert(movies.count == 250, "Expected 250 movies")
+            case .failure(let error):
+                XCTFail("Failed to get top 250 movies: \(error.localizedDescription)")
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 10.0)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testFetchMovies() {
+        let expectation = XCTestExpectation(description: "Fetch movies")
+        let webservice = WebService()
+        let viewModel = MovieListViewModel(webservice: webservice)
+        
+        viewModel.dataFound = {
+            XCTAssert(viewModel.movies.count == 250, "Expected 250 movies")
+            expectation.fulfill()
+        }
+        
+        viewModel.fetchMovies()
+        
+        wait(for: [expectation], timeout: 10.0)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    override func setUp() {
+        super.setUp()
+        webservice = MockWebService()
+        viewModel = MovieListViewModel(webservice: webservice)
     }
+    
+    override func tearDown() {
+        webservice = nil
+        viewModel = nil
+        super.tearDown()
+    }
+    
+    func testInitializeAuthentication() {
+        let authService = AuthService.shared
+        authService.initializeAuthentication()
+        
+        XCTAssertFalse(authService.userAuthenticated(), "User should not be authenticated after initialization")
+    }
+    
+    func testAuthenticate() {
+        let authService = AuthService.shared
+        authService.authenticate(bool: true)
+        
+        XCTAssertTrue(authService.userAuthenticated(), "User should be authenticated after calling authenticate with true")
+    }
+    
+    func testUserAuthenticated() {
+        let authService = AuthService.shared
+        authService.initializeAuthentication()
+        
+        XCTAssertFalse(authService.userAuthenticated(), "User should not be authenticated after initialization")
+        
+        authService.authenticate(bool: true)
+        
+        XCTAssertTrue(authService.userAuthenticated(), "User should be authenticated after calling authenticate with true")
+    }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class MockWebService: WebService {
+    var movies: [Movie]?
+    
+    override func getTop250Movies(completion: @escaping (Result<[Movie], Error>) -> Void) {
+        if let movies = movies {
+            completion(.success(movies))
+        } else {
+            completion(.failure(NSError(domain: "MockWebService", code: 0, userInfo: nil)))
         }
     }
-
 }
