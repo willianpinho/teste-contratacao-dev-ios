@@ -17,7 +17,7 @@ class WebService {
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             guard let dataResponse = data, error == nil else { return }
             do {
-                let decoder = try! JSONDecoder().decode(Top250MoviesResponse.self, from: dataResponse)
+                let decoder = try JSONDecoder().decode(Top250MoviesResponse.self, from: dataResponse)
                 let movies : [Movie] = decoder.items ?? []
                 completion(.success(movies))
             } catch let error {
