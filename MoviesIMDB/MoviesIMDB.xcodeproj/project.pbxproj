@@ -26,6 +26,7 @@
 		FF09F36C29AE3B3E00714B9A /* Top250MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F36B29AE3B3E00714B9A /* Top250MoviesResponse.swift */; };
 		FF09F37029AE3E4E00714B9A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F36E29AE3E4E00714B9A /* MovieTableViewCell.swift */; };
 		FF09F37129AE3E4E00714B9A /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF09F36F29AE3E4E00714B9A /* MovieTableViewCell.xib */; };
+		FF09F37429AE532400714B9A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09F37329AE532400714B9A /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		FF09F36B29AE3B3E00714B9A /* Top250MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top250MoviesResponse.swift; sourceTree = "<group>"; };
 		FF09F36E29AE3E4E00714B9A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		FF09F36F29AE3E4E00714B9A /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		FF09F37329AE532400714B9A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		FF09F31E29AE308C00714B9A /* MoviesIMDB */ = {
 			isa = PBXGroup;
 			children = (
+				FF09F37229AE530E00714B9A /* Extensions */,
 				FF09F36829AE373A00714B9A /* Models */,
 				FF09F36229AE33AA00714B9A /* Services */,
 				FF09F35329AE320E00714B9A /* Features */,
@@ -234,6 +237,14 @@
 				FF09F36F29AE3E4E00714B9A /* MovieTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FF09F37229AE530E00714B9A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF09F37329AE532400714B9A /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +391,7 @@
 				FF09F36429AE33D900714B9A /* Webservice.swift in Sources */,
 				FF09F32029AE308C00714B9A /* AppDelegate.swift in Sources */,
 				FF09F32229AE308C00714B9A /* SceneDelegate.swift in Sources */,
+				FF09F37429AE532400714B9A /* UIImageView+Extension.swift in Sources */,
 				FF09F36129AE336200714B9A /* BaseCoordinator.swift in Sources */,
 				FF09F35929AE324600714B9A /* MovieListViewModel.swift in Sources */,
 				FF09F35F29AE327A00714B9A /* MovieListCoordinator.swift in Sources */,
