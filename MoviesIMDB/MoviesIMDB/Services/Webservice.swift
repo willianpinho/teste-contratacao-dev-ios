@@ -25,4 +25,18 @@ class WebService {
             }
         }).resume()
     }
+    
+    func getTitle(movie: Movie, completion: @escaping (_ result: Result<Movie, Error>) -> Void) {
+        guard let id = movie.id else { return }
+        let request = baseURL.appending(path: "/Title/k_vdsxo77n/\(id)")
+        URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            guard let dataResponse = data, error == nil else { return }
+            do {
+                let movieDecoder = try JSONDecoder().decode(Movie.self, from: dataResponse)
+                completion(.success(movieDecoder))
+            } catch let error {
+                completion(.failure(error))
+            }
+        }).resume()
+    }
 }

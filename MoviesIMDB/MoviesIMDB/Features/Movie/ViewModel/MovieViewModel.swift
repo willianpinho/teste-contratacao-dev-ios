@@ -8,8 +8,27 @@
 import Foundation
 
 class MovieViewModel {
-    var viewDidDisappear = DelegateView<Void>()
+    let webservice: WebService
+    var movie: Movie?
 
-    init() {
+    var viewDidDisappear = DelegateView<Void>()
+    var dataFound: (() -> ())?
+
+    init(webservice: WebService) {
+        self.webservice = webservice
+    }
+    
+    func fetchMovie(movie: Movie) {
+        webservice.getTitle(movie: movie) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let movie):
+                    self?.movie = movie
+                    self?.dataFound?()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }

@@ -14,11 +14,21 @@ class MovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewModel.viewDidDisappear.accept?(())
+    }
+}
+
+extension MovieViewController {
+    private func setupData() {
+        guard let currentMovie = self.movie else { return }
+        viewModel.fetchMovie(movie: currentMovie)
     }
 }

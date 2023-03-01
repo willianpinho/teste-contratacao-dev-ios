@@ -9,7 +9,7 @@ import UIKit
 
 class MovieCoordinator: BaseCoordinator {
     private var movie: Movie?
-    private var viewModel: MovieViewModel = MovieViewModel()
+    private var viewModel: MovieViewModel = MovieViewModel(webservice: WebService())
     
     init(movie: Movie) {
         self.movie = movie
